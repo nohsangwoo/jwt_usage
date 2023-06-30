@@ -18,13 +18,16 @@ app.use(express.json())
 app.use(cookieParser())
 app.use(
   cors({
-    origin: 'http:locahost:3000',
+    origin: 'http://localhost:3000',
     methods: ['GET', 'POST'],
     credentials: true,
   }),
 )
 
 // # api...
+app.get('/test', (req, res) => {
+  return res.send('haha')
+})
 
 // 로그인
 app.post('/login', login)
